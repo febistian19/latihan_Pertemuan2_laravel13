@@ -18,6 +18,7 @@
             {{-- Link navigasi --}}
             <a href="{{ route('dashboard') }}" class="ml-6 text-sm text-gray-600 hover:text-blue-600">Dashboard</a>
             <a href="{{ route('about') }}" class="ml-6 text-sm text-gray-600 hover:text-blue-600">About ME</a>
+            <a href="{{ route('contact') }}" class="ml-6 text-sm text-gray-600 hover:text-blue-600">Contact</a>
         </div>
     </nav>
     {{-- KONTEN — setiap halaman anak mengisi bagian ini --}}
