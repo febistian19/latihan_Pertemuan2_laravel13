@@ -29,7 +29,9 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $namaTask = $request->input('title');
-        return redirect()->route('tasks.index'.'?nama_task='.$namaTask);
+        // return redirect()->route('tasks.index'.'?nama_task='.$namaTask);
+        return redirect()->route('tasks.index', ['nama_task' => $namaTask]);
+
     }
 
     /**
@@ -63,4 +65,6 @@ class TaskController extends Controller
     {
         //
     }
+
+
 }
