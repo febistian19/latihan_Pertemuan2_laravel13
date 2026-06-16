@@ -9,11 +9,15 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request )
+
+    public function index(Request $request)
     {
         $namaTask = $request->input('nama_task');
-        return view('tasks.index', compact('namaTask'));
+        $deskripsi = $request->input('deskripsi');
+
+        return view('tasks.index', compact('namaTask', 'deskripsi'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -29,10 +33,14 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $namaTask = $request->input('title');
-        // return redirect()->route('tasks.index'.'?nama_task='.$namaTask);
-        return redirect()->route('tasks.index', ['nama_task' => $namaTask]);
+        $deskripsi = $request->input('description');
 
+        return redirect()->route('tasks.index', [
+            'nama_task' => $namaTask,
+            'deskripsi' => $deskripsi
+        ]);
     }
+
 
     /**
      * Display the specified resource.
@@ -65,6 +73,4 @@ class TaskController extends Controller
     {
         //
     }
-
-
 }
